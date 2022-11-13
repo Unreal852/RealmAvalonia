@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RealmAvalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:RealmAvalonia.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RealmAvalonia.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="RealmAvalonia">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto *">
+        <Button Content="Add" Command="{Binding AddPlayer}"/>
+        <ListBox Grid.Row="1" Items="{Binding Players}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type models:Player}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Name}" />
+                        <Label Content="{Binding Experience}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox> 
+    </Grid>
+</Window>
