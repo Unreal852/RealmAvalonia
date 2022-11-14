@@ -1,9 +1,10 @@
 ﻿using System.Collections.ObjectModel;
+using ReactiveUI;
 using RealmAvalonia.Models;
 
 namespace RealmAvalonia.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel : ReactiveObject
 {
     public MainWindowViewModel()
     {
