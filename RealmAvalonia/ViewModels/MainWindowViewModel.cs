@@ -6,10 +6,6 @@ namespace RealmAvalonia.ViewModels;
 
 public class MainWindowViewModel : ReactiveObject
 {
-    public MainWindowViewModel()
-    {
-    }
-
     public ObservableCollection<Player> Players { get; } = new();
 
     public void AddPlayer()
